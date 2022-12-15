@@ -8,10 +8,10 @@ Bundler.require(*Rails.groups)
 
 module TrainingExercise
   class Application < Rails::Application
-    config.generators do |generate|
-      generate.assets false
-      generate.helper false
-      generate.test_framework :rspec
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.test_framework nil
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
