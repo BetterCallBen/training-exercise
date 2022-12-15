@@ -38,7 +38,14 @@ code . && dev
 
 Notice that it won't work until you generate the good models and controllers
 
+#### All specs
+
 ```sh
 bundle exec rspec
 ```
 
+#### Specific specs (tree model exemple)
+
+```sh
+bundle exec rspec spec/models/tree_spec.rb 
+```
