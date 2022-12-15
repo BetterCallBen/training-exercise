@@ -2,7 +2,7 @@
 
 ### Import repository
 
-Go and create a new [repository](https://github.com/new/import) from an existing one \
+Follow [this link](https://github.com/new/import) to create a new repository from an existing one \
 Fill the old repository with this url https://github.com/BetterCallBen/training-exercise.git \
 Choose your repository name and begin import
 
