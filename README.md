@@ -33,3 +33,12 @@ rails db:create db:migrate
 ```sh
 code . && dev
 ```
+
+### To run specs
+
+Notice that it won't work until you generate the good models and controllers
+
+```sh
+bundle exec rspec
+```
+
