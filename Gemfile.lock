@@ -104,17 +104,27 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.5.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    erb-formatter (0.3.0)
     erubi (1.11.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     font-awesome-sass (6.2.1)
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -176,6 +186,10 @@ GEM
       activesupport (= 7.0.4)
       bundler (>= 1.15.0)
       railties (= 7.0.4)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -197,7 +211,25 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
     rubyzip (2.3.2)
+    rufo (0.13.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -258,13 +290,20 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  erb-formatter
+  factory_bot_rails
+  faker
   font-awesome-sass (~> 6.1)
+  htmlbeautifier
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
+  rails-controller-testing
   redis (~> 4.0)
+  rspec-rails
+  rufo
   sassc-rails
   selenium-webdriver
   simple_form!

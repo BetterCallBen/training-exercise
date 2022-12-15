@@ -1,6 +1,47 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 1rem;
+  right: 1rem;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  animation: pop 0.3s ease-in-out;
+  &.info {
+    background-color: #edf2ff;
+  }
+  &.warning {
+    background-color: red;
+  }
+  .text {
+    margin: 0;
+  }
+  .close-flash {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    .close-svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: white;
+    }
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
