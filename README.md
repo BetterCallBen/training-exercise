@@ -4,7 +4,7 @@
 
 Follow [this link](https://github.com/new/import) to create a new repository from an existing one \
 Fill the old repository with this url https://github.com/BetterCallBen/training-exercise.git \
-Choose your repository name and begin import
+Chose your repository name and begin import
 
 ### Clone the repository
 
@@ -69,7 +69,7 @@ rbenv global 3.1.2
 ```
 ### Rails
 
-This app is using ruby 7.0.4
+This app is using rails 7.0.4
 
 #### To install this rails version
 
