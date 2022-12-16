@@ -35,12 +35,11 @@
 
     <%= image_tag("schema1") %>
 
-
-    <p class="big-title">2- Développer une application web</p>
+    <p class="big-title">2- Deploy a web app</p>
 
     <p class="title" id="model">Models and Migrations</p>
 
-    <p class="paragraphe">La gem <span class="devise">devise</span> a déjà été ajoutée et la table <span class="devise">users</span> a déjà été créée.</p>
+    <p class="paragraphe">The gem <span class="devise">devise</span> has already been installed and the table <span class="devise">users</span> has already been created.</p>
 
     <p class="subtitle">Generate the Tree model through the right rails generator. It should have the following columns.</p>
 
@@ -55,9 +54,7 @@
 
     <p class="paragraphe">Don’t forget that the <span class="controller">Tree</span> has to be attached to a <span class="controller">User</span>.</p>
 
-    <p class="paragraphe">La suppression d’un arbre doit entraîner la suppression de ses adoptions.</p>
-
-
+    <p class="paragraphe">Deleting a tree should delete their adoptions.</p>
 
     <p class="subtitle">Generate the Adoption model through the right rails generator. It should have the following columns.</p>
 
@@ -69,8 +66,7 @@
 
     <p class="paragraphe">Don’t forget that the <span class="controller">Adoption</span> has to be attached to a <span class="controller">User</span> and can have a <span class="controller">Review</span>.</p>
 
-    <p class="paragraphe">La suppression d’une adoption doit entraîner la suppression de ses reviews.</p>
-
+    <p class="paragraphe">Deleting a adoption should delete their reviews.</p>
 
     <p class="subtitle">Generate the Review model through the right rails generator. It should have the following columns.</p>
 
@@ -88,45 +84,42 @@
       <li>last_name, as a string</li>
     </ul>
 
-    <p class="paragraphe">La suppression d’un utilisateur doit entraîner la suppression de ses arbres et de ses adoptions.</p>
+    <p class="paragraphe">Deleting a user should delete their trees and adoptions.</p>
 
     <p class="paragraphe">You can add the modifications to your schema to make it look like that : </p>
 
     <%= image_tag("schema2") %>
-
-
 
     <p class="title" id="validates">Validates</p>
 
     <p class="subtitle">a tree isn’t valid :</p>
 
     <ul>
-      <li>S’il n’a pas de nom.</li>
-      <li>S’il n’a pas d’adresse.</li>
-      <li>S’il n’a pas de fruit.</li>
-      <li>S’il n’a pas de description.</li>
-      <li>S’il n’a pas de quantité par année.</li>
+      <li>If he has no name.</li>
+      <li>If he has no adresse.</li>
+      <li>If he has no fruit.</li>
+      <li>If he has no description.</li>
+      <li>If he has no quantity by year.</li>
       <li>A fruit must belong to this fixed list : “Apple”, “Apricot”, “Cherry”, “Chestnut”,  “Coconut tree”, “Fig”, “Grapefruit”, “Hazel”, “Mandarin”, “Mango”, “Mirabellier”, “Mulberry”, “Olivier”, “Orange”, “Pear”, “Plum”.</li>
-      <li>Si sa description fait moins de 20 ou plus de 280 caractères.</li>
-      <li>Si sa quantité par année est inférieure ou égale à 0.</li>
-      <li>Si son prix est inférieur ou égale à 0.</li>
+      <li>If its description is less than 20 or more than 280 characters.</li>
+      <li>If its quantity per year is less than or equal to 0.</li>
+      <li>If its price is less than or equal to 0.</li>
     </ul>
 
     <p class="subtitle">an adoption isn’t valid :</p>
 
     <ul>
-      <li>Si elle n’a pas de date de début.</li>
-      <li>Si elle n’a pas de date de fin.</li>
+      <li>If she has no start date.</li>
+      <li>If she has no end date.</li>
     </ul>
-
 
     <p class="subtitle">a review isn’t valid :</p>
 
     <ul>
-      <li>Si elle n’a pas de rating</li>
-      <li>Son rating doit être un entier contenu entre 0 et 5 inclus.</li>
-      <li>Si elle n’a pas de description</li>
-      <li>Si sa description fait moins de 3 ou plus de 114 caractères.</li>
+      <li>If she has no rating</li>
+      <li>Her rating must be an integer between 0 and 5 inclusive.</li>
+      <li>If she has no description</li>
+      <li>If its description is less than 3 or more than 114 characters.</li>
     </ul>
 
     <p class="title" id="seed">Seed</p>
