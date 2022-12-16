@@ -49,3 +49,37 @@ bundle exec rspec
 ```sh
 bundle exec rspec spec/models/tree_spec.rb 
 ```
+
+## Config 
+
+### Ruby
+
+This app is using ruby 3.1.2
+
+#### To install it 
+
+```sh
+rbenv install 3.1.2
+```
+
+#### To set the default version
+
+```sh
+rbenv global 3.1.2
+```
+### Rails
+
+This app is using ruby 7.0.4
+
+#### To install this rails version
+
+```sh
+gem install rails -v 7.0.4
+```
+
+#### To set the last rails version
+
+```sh
+rbenv rehash
+```
+
