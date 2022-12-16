@@ -69,7 +69,7 @@ rbenv global 3.1.2
 ```
 ### Rails
 
-This app is using ruby 7.0.4
+This app is using rails 7.0.4
 
 #### To install this rails version
 
