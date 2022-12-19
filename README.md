@@ -65,7 +65,7 @@ rbenv install 3.1.2
 #### To set the default version
 
 ```sh
-rbenv global 3.1.2
+rbenv shell 3.1.2
 ```
 ### Rails
 
