@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe AdoptionsController, type: :routing do
   describe "routing" do
-
     it "routes to #new" do
       expect(get: "/trees/1/adoptions/new").to route_to("adoptions#new", tree_id: "1")
     end

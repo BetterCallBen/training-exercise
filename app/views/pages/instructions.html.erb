@@ -6,94 +6,82 @@
     <div class="nav-div context">
       <p>Schema DB</p>
     </div>
-    <a class="nav-div link" href="#associations"><p>Associations</p></a>
+    <a class="nav-div link" href="#associations">
+      <p>Associations</p>
+    </a>
     <div class="nav-div context">
       <p>DEVELOPMENT</p>
     </div>
-    <a class="nav-div link" href="#model"><p>Models and Migrations</p></a>
-    <a class="nav-div link" href="#validates"><p>Validates</p></a>
-    <a class="nav-div link" href="#seed"><p>Seed</p></a>
-    <a class="nav-div link" href="#controller"><p>Controller and Routes</p></a>
-    <a class="nav-div link" href="#feature"><p>Features</p></a>
+    <a class="nav-div link" href="#model">
+      <p>Models and Migrations</p>
+    </a>
+    <a class="nav-div link" href="#validates">
+      <p>Validates</p>
+    </a>
+    <a class="nav-div link" href="#seed">
+      <p>Seed</p>
+    </a>
+    <a class="nav-div link" href="#controller">
+      <p>Controller and Routes</p>
+    </a>
+    <a class="nav-div link" href="#feature">
+      <p>Features</p>
+    </a>
     <div class="nav-div context">
       <p>DEPLOYMENT</p>
     </div>
-    <a class="nav-div link" href="#heroku"><p>Heroku</p></a>
+    <a class="nav-div link" href="#heroku">
+      <p>Heroku</p>
+    </a>
   </div>
   <div class="instructions-content">
     <p class="big-title">1- Create the DB (Schema DB)</p>
-
     <p class="title" id="associations">Associations</p>
-
     <ul>
       <li class="paragraphe">A user can create many trees, but a tree is created by only one user.</li>
       <li class="paragraphe">A user can adopt a tree.</li>
       <li class="paragraphe">A user who has made an adoption can add a review on it.</li>
     </ul>
-
     <p class="paragraphe">For now your schema should look like this:</p>
-
     <%= image_tag("schema1") %>
-
     <p class="big-title">2- Develop a web app</p>
-
     <p class="title" id="model">Models and Migrations</p>
-
     <p class="paragraphe">The gem <span class="devise">devise</span> has already been installed and the table <span class="devise">users</span> has already been created.</p>
-
     <p class="subtitle">Generate the Tree model through the right rails generator. It should have the following columns.</p>
-
     <ul>
       <li>name, as a string</li>
       <li>address, as a string</li>
       <li>description, as a text</li>
-      <li>fruits, as a string</li>
+      <li>fruit, as a string</li>
       <li>price_per_year, as an integer</li>
-      <li>quantity_by_year, as an integer</li>
+      <li>quantity_per_year, as an integer</li>
     </ul>
-
     <p class="paragraphe">Don’t forget that the <span class="controller">Tree</span> has to be attached to a <span class="controller">User</span>.</p>
-
     <p class="paragraphe">Deleting a tree should delete their adoptions.</p>
-
     <p class="subtitle">Generate the Adoption model through the right rails generator. It should have the following columns.</p>
-
     <ul>
       <li>name, as a string</li>
       <li>starts_at, as a date</li>
       <li>ends_at, as a date</li>
     </ul>
-
     <p class="paragraphe">Don’t forget that the <span class="controller">Adoption</span> has to be attached to a <span class="controller">User</span> and can have a <span class="controller">Review</span>.</p>
-
     <p class="paragraphe">Deleting a adoption should delete their reviews.</p>
-
     <p class="subtitle">Generate the Review model through the right rails generator. It should have the following columns.</p>
-
     <ul>
       <li>content, as a text</li>
       <li>rating, as an integer</li>
     </ul>
-
     <p class="paragraphe">Don’t forget that the <span class="controller">Review</span> has to be attached to an <span class="controller">Adoption</span> and a <span class="controller">User</span>.</p>
-
     <p class="subtitle">Add fields to a user through the right rails generator</p>
-
     <ul>
       <li>first_name, as a string</li>
       <li>last_name, as a string</li>
     </ul>
-
     <p class="paragraphe">Deleting a user should delete their trees and adoptions.</p>
-
     <p class="paragraphe">You can add the modifications to your schema to make it look like that : </p>
-
     <%= image_tag("schema2") %>
-
     <p class="title" id="validates">Validates</p>
-
     <p class="subtitle">a tree isn’t valid :</p>
-
     <ul>
       <li>If he has no name.</li>
       <li>If he has no adresse.</li>
@@ -105,107 +93,86 @@
       <li>If its quantity per year is less than or equal to 0.</li>
       <li>If its price is less than or equal to 0.</li>
     </ul>
-
     <p class="subtitle">an adoption isn’t valid :</p>
-
     <ul>
       <li>If she has no start date.</li>
       <li>If she has no end date.</li>
     </ul>
-
     <p class="subtitle">a review isn’t valid :</p>
-
     <ul>
       <li>If she has no rating</li>
       <li>Her rating must be an integer between 0 and 5 inclusive.</li>
       <li>If she has no description</li>
       <li>If its description is less than 3 or more than 114 characters.</li>
     </ul>
-
     <p class="title" id="seed">Seed</p>
-
     <p class="paragraphe">Let’s create some trees in the rails console or even better, let’s build a little for our app. This will help us to get started designing the views, even though we can’t actually add a tree through our website. In the db/seeds.rb file, let’s create around 4 trees. Here is one to get you started.</p>
-
     <div class="seed">
       <p class="file"># db/seeds.rb </p>
       <p>
         <span class="var">john</span> = <span class="class">User</span><span class="point">.</span><span class="method">create!</span><span class="par">(</span><span class="attribute">first_name:</span>  <span class="content">'John'</span><span class="point">,</span>  <span class="attribute">last_name:</span>  <span class="content">'Doe'</span><span class="point">, <span class="attribute">email:</span>  <span class="content">'john@gmail.com'</span><span class="point">,</span> <span class="attribute">password:</span>  <span class="content">'secret'</span><span class="par">)</span>
-      </p>
-      <p>
-        <span class="class">Tree</span><span class="point">.</span><span class="method">create!</span><span class="par">(</span><span class="attribute">name:</span> <span class="content">'John’s apple tree'</span><span class="point">,</span> <span class="attribute">address:</span> <span class="content">'20 rue des Capucins 69001 Lyon'</span><span class="point">, <span class="attribute">description:</span> <span class="content">'This apple tree produces both sweet and sour apples. They will be perfect to cut a little hunger, or enjoy a juicy apple for the dessert.'</span><span class="point">,</span> <span class="attribute">price:</span> <span class="content">175</span><span class="point">, </span><span class="attribute">quantity_per_year:</span> <span class="content">5</span><span class="point">, </span><span class="attribute">fruits:</span> <span class="content">'apple'</span><span class="point">,</span> <span class="attribute">user:</span> <span class="var">john</span><span class="par">)</span>
-      </p>
+        </p>
+        <p>
+          <span class="class">Tree</span><span class="point">.</span><span class="method">create!</span><span class="par">(</span><span class="attribute">name:</span> <span class="content">'John’s apple tree'</span><span class="point">,</span> <span class="attribute">address:</span> <span class="content">'20 rue des Capucins 69001 Lyon'</span><span class="point">, <span class="attribute">description:</span> <span class="content">'This apple tree produces both sweet and sour apples. They will be perfect to cut a little hunger, or enjoy a juicy apple for the dessert.'</span><span class="point">,</span> <span class="attribute">price:</span> <span class="content">175</span><span class="point">, </span><span class="attribute">quantity_per_year:</span> <span class="content">5</span><span class="point">, </span><span class="attribute">fruit:</span> <span class="content">'apple'</span><span class="point">,</span> <span class="attribute">user:</span> <span class="var">john</span><span class="par">)</span>
+          </p>
+        </div>
+        <p class="title" id="controller">Controllers & Routes</p>
+        <p class="paragraphe">Generate an empty (no actions) <span class="controller">TreesController</span> with the right rails generator.</p>
+        <p class="paragraphe">
+          We can start off by adding all our 7 CRUD routes in our config/routes.rb as we will be building them all !
+          What keyword can you use to generate all of them directly ?
+        </p>
+        <p class="paragraphe">Generate an empty (no actions) <span class="controller">AdoptionsController</span> with the right rails generator.</p>
+        <p class="paragraphe">We can continue by adding some nested routes, the new and create methods of our 7 CRUD routes inside the tree’s routes. Only add the routes needed.</p>
+        <p class="title" id="feature">Features</p>
+        <p class="subtitle feature">As a user, I can see all available trees</p>
+        <p class="paragraphe">
+          Let’s add the correct action in our <span class="controller">TreesController</span> (hint: it’s index ;)). The action in the controller should fetch all trees in our database (we have Active Record for that!) and pass in onto the view. The view should loop over these to display them, like in the screenshot below. Let's start designing right from the beginning. We can use <a href="https://heroicons.com/" target="_blank">Heroicons</a> for icons.
+        </p>
+        <p class="subtitle feature">As a user, I can add a tree</p>
+        <p class="paragraphe">
+          Remember that to create a tree, we will need two routes. One route is there to display the new tree form, and another one is there to handle the POST request generated when submitting this form. Use the <a href="https://github.com/heartcombo/simple_form" target="_blank">simple_form_for</a>, and make it look nice!
+        </p>
+        <p class="subtitle feature">As a user, I can see detailed information of a given tree</p>
+        <p class="paragraphe">
+          Time to add the correct action to show all the information of a single given flat. How can we know what tree the user wants to have a look at ? Let’s also update the index.html.erb view the link_to helper to build the dynamic links.
+        </p>
+        <p class="subtitle feature">As a user, I can edit the details of a tree</p>
+        <p class="paragraphe">
+          We can also add the possibility to edit a flat, to remove typos after creating a flat. What about refactoring our new.html.erb form into a partial?
+        </p>
+        <p class="paragraphe">
+          Don’t forget to update the index.html.erb and show.html.erb with the new edit flat links!
+        </p>
+        <p class="subtitle feature">As a user, I can delete a tree from the website</p>
+        <p class="paragraphe">
+          Let’s also add the ability to remove a tree from our website. How can we create a link to destroy a resource, and what action is it going to hit in the controller?
+        </p>
+        <p class="paragraphe">
+          NB : a user can destroy a tree only if he’s the owner
+        </p>
+        <p class="subtitle feature">As a user, I can adopt a tree</p>
+        <p class="paragraphe">
+          Remember that to adopt a tree, we will need two routes. One route is there to display the new adoption form, and another one is there to handle the POST request generated when submitting this form. The adoption has to start the day of today and end one year later.
+        </p>
+        <p class="paragraphe">
+          Make the form accessible from the show.html.erb view of a tree
+        </p>
+        <p class="paragraphe">
+          PS: The adoption of a tree should start now and end one year later, don’t forget to add it in the controller!
+        </p>
+        <p class="subtitle feature">As a user, I can see my adoptions (optional)</p>
+        <p class="subtitle feature">Adding photo to the tree model with cloudinary (optional)</p>
+        <p class="subtitle feature">Adding geocoding (optional)</p>
+        <p class="subtitle feature">Filtering trees by address with a search (optional)</p>
+        <p class="subtitle feature">Filtering trees by fruit with ajax (optional)</p>
+        <p class="big-title">3- Deploy a web application</p>
+        <p class="title" id="heroku">Heroku</p>
+        <p class="paragraphe">
+          To deploy the application on Heroku, we need to create a new app on Heroku, then push the code on it.
+        </p>
+        <p class="paragraphe">
+          Follow <a href="https://www.lewagon.com/blog/buying-a-domain-on-namecheap-and-pointing-it-to-heroku">this tutorial</a> to get a domain name
+        </p>
+      </div>
     </div>
-    <p class="title" id="controller">Controllers & Routes</p>
-
-    <p class="paragraphe">Generate an empty (no actions) <span class="controller">TreesController</span> with the right rails generator.</p>
-    <p class="paragraphe">
-      We can start off by adding all our 7 CRUD routes in our config/routes.rb as we will be building them all !
-      What keyword can you use to generate all of them directly ?
-    </p>
-    <p class="paragraphe">Generate an empty (no actions) <span class="controller">AdoptionsController</span> with the right rails generator.</p>
-    <p class="paragraphe">We can continue by adding some nested routes, the new and create methods of our 7 CRUD routes inside the tree’s routes. Only add the routes needed.</p>
-
-    <p class="title" id="feature">Features</p>
-
-    <p class="subtitle feature">As a user, I can see all available trees</p>
-    <p class="paragraphe">
-      Let’s add the correct action in our <span class="controller">TreesController</span> (hint: it’s index ;)). The action in the controller should fetch all trees in our database (we have Active Record for that!) and pass in onto the view. The view should loop over these to display them, like in the screenshot below. Let's start designing right from the beginning. We can use <a href="https://heroicons.com/" target="_blank">Heroicons</a> for icons.
-    </p>
-
-    <p class="subtitle feature">As a user, I can add a tree</p>
-    <p class="paragraphe">
-      Remember that to create a tree, we will need two routes. One route is there to display the new tree form, and another one is there to handle the POST request generated when submitting this form. Use the <a href="https://github.com/heartcombo/simple_form" target="_blank">simple_form_for</a>, and make it look nice!
-    </p>
-
-    <p class="subtitle feature">As a user, I can see detailed information of a given tree</p>
-    <p class="paragraphe">
-      Time to add the correct action to show all the information of a single given flat. How can we know what tree the user wants to have a look at ? Let’s also update the index.html.erb view the link_to helper to build the dynamic links.
-    </p>
-
-    <p class="subtitle feature">As a user, I can edit the details of a tree</p>
-    <p class="paragraphe">
-      We can also add the possibility to edit a flat, to remove typos after creating a flat. What about refactoring our new.html.erb form into a partial?
-    </p>
-    <p class="paragraphe">
-      Don’t forget to update the index.html.erb and show.html.erb with the new edit flat links!
-    </p>
-
-    <p class="subtitle feature">As a user, I can delete a tree from the website</p>
-    <p class="paragraphe">
-      Let’s also add the ability to remove a tree from our website. How can we create a link to destroy a resource, and what action is it going to hit in the controller?
-    </p>
-    <p class="paragraphe">
-      NB : a user can destroy a tree only if he’s the owner
-    </p>
-
-    <p class="subtitle feature">As a user, I can adopt a tree</p>
-    <p class="paragraphe">
-      Remember that to adopt a tree, we will need two routes. One route is there to display the new adoption form, and another one is there to handle the POST request generated when submitting this form. The adoption has to start the day of today and end one year later.
-    </p>
-    <p class="paragraphe">
-      Make the form accessible from the show.html.erb view of a tree
-    </p>
-    <p class="paragraphe">
-      PS: The adoption of a tree should start now and end one year later, don’t forget to add it in the controller!
-    </p>
-
-    <p class="subtitle feature">As a user, I can see my adoptions (optional)</p>
-    <p class="subtitle feature">Adding photo to the tree model with cloudinary (optional)</p>
-    <p class="subtitle feature">Adding geocoding (optional)</p>
-    <p class="subtitle feature">Filtering trees by address with a search (optional)</p>
-    <p class="subtitle feature">Filtering trees by fruits with ajax (optional)</p>
-
-    <p class="big-title">3- Deploy a web application</p>
-
-    <p class="title" id="heroku">Heroku</p>
-
-    <p class="paragraphe">
-      To deploy the application on Heroku, we need to create a new app on Heroku, then push the code on it.
-    </p>
-    <p class="paragraphe">
-      Follow <a href="https://www.lewagon.com/blog/buying-a-domain-on-namecheap-and-pointing-it-to-heroku">this tutorial</a> to get a domain name
-    </p>
-
-
-  </div>
-</div>
