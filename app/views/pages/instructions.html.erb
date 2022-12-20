@@ -1,10 +1,10 @@
-<div class="instructions-container">
-  <div class="instructions-nav">
-    <div class="nav-logo">
-      <p>instructions</p>
-    </div>
-    <div class="nav-div context">
+<div class="instructions-container" data-controller="navbar">
+  <div class="instructions-nav" data-navbar-target="nav">
+    <div class="nav-div context first">
       <p>Schema DB</p>
+      <svg data-action="click->navbar#toggleNav" data-navbar-target="closeBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="close-nav-btn">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+      </svg>
     </div>
     <a class="nav-div link" href="#associations">
       <p>Associations</p>
@@ -34,8 +34,18 @@
       <p>Heroku</p>
     </a>
   </div>
-  <div class="instructions-content">
-    <p class="big-title">1- Create the DB (Schema DB)</p>
+  <div class="instructions-content" data-navbar-target="container">
+    <div class="instructions-title">
+      <svg data-action="click->navbar#toggleNav" data-navbar-target="openBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="open-nav-btn hidden">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+      </svg>
+      <p class="title">Instructions</p>
+    </div>
+    <div>
+      <p class="big-title">
+        1- Create the DB (Schema DB)
+      </p>
+    </div>
     <p class="title" id="associations">Associations</p>
     <ul>
       <li class="paragraphe">A user can create many trees, but a tree is created by only one user.</li>
@@ -175,5 +185,7 @@
         <p class="paragraphe">
           Follow <a href="https://www.lewagon.com/blog/buying-a-domain-on-namecheap-and-pointing-it-to-heroku">this tutorial</a> to get a domain name
         </p>
-      </div>
+      </p>
     </div>
+  </div>
+</div>

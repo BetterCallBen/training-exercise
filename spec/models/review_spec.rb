@@ -36,10 +36,16 @@ RSpec.describe Review, type: :model do
       expect(review.errors[:rating]).to include("must be in 0..5")
     end
 
-    it "should not persist Review with invalid content" do
-      review = FactoryBot.build(:review, content: "a" * 281)
+    it "should not persist Review with too long content" do
+      review = FactoryBot.build(:review, content: "a" * 115)
       expect(review).to_not be_valid
-      expect(review.errors[:content]).to include("is too long (maximum is 280 characters)")
+      expect(review.errors[:content]).to include("is too long (maximum is 114 characters)")
+    end
+
+    it "should not persist Review with too short content" do
+      review = FactoryBot.build(:review, content: "hi")
+      expect(review).to_not be_valid
+      expect(review.errors[:content]).to include("is too short (minimum is 3 characters)")
     end
   end
 end

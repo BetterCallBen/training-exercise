@@ -2,7 +2,10 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application";
+import { application } from "./application"
 
-import FlashesController from "./flashes_controller";
-application.register("flashes", FlashesController);
+import FlashesController from "./flashes_controller"
+application.register("flashes", FlashesController)
+
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)

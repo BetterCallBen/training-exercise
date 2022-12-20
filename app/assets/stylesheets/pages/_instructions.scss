@@ -10,7 +10,7 @@
 .instructions-container {
   width: 100vw;
   height: 100vh;
-  background-color: #f7f7f7;
+  transition: 0.3s;
   img {
     filter: blur(8px);
     transition: 0.25s;
@@ -29,19 +29,9 @@
     display: flex;
     flex-direction: column;
     border-right: 1px solid #e0e0e0;
-    .nav-logo {
-      height: 7vh;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      margin-bottom: 12px;
-      background-color: #f3f3f4;
-      p {
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: #3d3d3d;
-        margin: 0;
-      }
+    transition: 0.3s;
+    &.hidden {
+      transform: translate(-260px, 0);
     }
     .nav-div {
       height: 6vh;
@@ -65,17 +55,74 @@
           color: #6d6d6e;
         }
       }
+      &.first {
+        display: flex;
+        justify-content: space-between;
+      }
+      .close-nav-btn {
+        height: 25px;
+        padding: 2px;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(128, 128, 128, 0.367);
+          border-radius: 4px;
+        }
+        &.hidden {
+          opacity: 0;
+        }
+      }
       p {
         margin: 0;
       }
     }
   }
   .instructions-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: calc(100vw - 260px);
     margin-left: 260px;
-    padding: 3vh;
+    padding: 0 2rem;
+    transition: 0.3s;
+    &.full {
+      width: 100vw;
+      margin-left: 0;
+    }
+    .instructions-title {
+      position: sticky;
+      top: 0;
+      left: 0;
+      height: 7vh;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ffffff;
+      z-index: 9;
+      .open-nav-btn {
+        height: 25px;
+        padding: 2px;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(128, 128, 128, 0.367);
+          border-radius: 4px;
+        }
+        &.hidden {
+          display: none;
+        }
+      }
+      .title {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.803);
+        margin: 0;
+        padding: 0;
+        transition: 0.3s;
+      }
+    }
+
     a {
       color: rgb(0, 148, 223);
       text-decoration: none;
