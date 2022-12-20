@@ -87,7 +87,8 @@
       <li>If he has no adresse.</li>
       <li>If he has no fruit_type.</li>
       <li>If he has no description.</li>
-      <li>If he has no quantity by year.</li>
+      <li>If he has no price per year.</li>
+      <li>If he has no quantity per year.</li>
       <li>A fruit_type must belong to this fixed list : “Apple”, “Apricot”, “Cherry”, “Chestnut”,  “Coconut tree”, “Fig”, “Grapefruit”, “Hazel”, “Mandarin”, “Mango”, “Mirabellier”, “Mulberry”, “Olivier”, “Orange”, “Pear”, “Plum”.</li>
       <li>If its description is less than 20 or more than 280 characters.</li>
       <li>If its quantity per year is less than or equal to 0.</li>
@@ -113,7 +114,7 @@
         <span class="var">john</span> = <span class="class">User</span><span class="point">.</span><span class="method">create!</span><span class="par">(</span><span class="attribute">first_name:</span>  <span class="content">'John'</span><span class="point">,</span>  <span class="attribute">last_name:</span>  <span class="content">'Doe'</span><span class="point">, <span class="attribute">email:</span>  <span class="content">'john@gmail.com'</span><span class="point">,</span> <span class="attribute">password:</span>  <span class="content">'secret'</span><span class="par">)</span>
         </p>
         <p>
-          <span class="class">Tree</span><span class="point">.</span><span class="method">create!</span><span class="par">(</span><span class="attribute">name:</span> <span class="content">'John’s apple tree'</span><span class="point">,</span> <span class="attribute">address:</span> <span class="content">'20 rue des Capucins 69001 Lyon'</span><span class="point">, <span class="attribute">description:</span> <span class="content">'This apple tree produces both sweet and sour apples. They will be perfect to cut a little hunger, or enjoy a juicy apple for the dessert.'</span><span class="point">,</span> <span class="attribute">price:</span> <span class="content">175</span><span class="point">, </span><span class="attribute">quantity_per_year:</span> <span class="content">5</span><span class="point">, </span><span class="attribute">fruit_type:</span> <span class="content">'apple'</span><span class="point">,</span> <span class="attribute">user:</span> <span class="var">john</span><span class="par">)</span>
+          <span class="class">Tree</span><span class="point">.</span><span class="method">create!</span><span class="par">(</span><span class="attribute">name:</span> <span class="content">'John’s apple tree'</span><span class="point">,</span> <span class="attribute">address:</span> <span class="content">'20 rue des Capucins 69001 Lyon'</span><span class="point">, <span class="attribute">description:</span> <span class="content">'This apple tree produces both sweet and sour apples. They will be perfect to cut a little hunger, or enjoy a juicy apple for the dessert.'</span><span class="point">,</span> <span class="attribute">price_per_year:</span> <span class="content">175</span><span class="point">, </span><span class="attribute">quantity_per_year:</span> <span class="content">5</span><span class="point">, </span><span class="attribute">fruit_type:</span> <span class="content">'Apple'</span><span class="point">,</span> <span class="attribute">user:</span> <span class="var">john</span><span class="par">)</span>
           </p>
         </div>
         <p class="title" id="controller">Controllers & Routes</p>

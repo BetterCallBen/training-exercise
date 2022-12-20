@@ -9,38 +9,37 @@ RSpec.describe Review, type: :model do
 
     it "should not persist Review without user" do
       review = FactoryBot.build(:review, user: nil)
-      review.validate
       expect(review).to_not be_valid
     end
 
     it "should not persist Review without adoption" do
       review = FactoryBot.build(:review, adoption: nil)
-      review.validate
-      expect(review.errors.full_messages).to include("Adoption must exist")
+      expect(review).to_not be_valid
+      expect(review.errors[:adoption]).to include("must exist")
     end
 
     it "should not persist Review without content" do
       review = FactoryBot.build(:review, content: nil)
-      review.validate
-      expect(review.errors.full_messages).to include("Content can't be blank")
+      expect(review).to_not be_valid
+      expect(review.errors[:content]).to include("can't be blank")
     end
 
     it "should not persist Review without rating" do
       review = FactoryBot.build(:review, rating: nil)
-      review.validate
-      expect(review.errors.full_messages).to include("Rating can't be blank")
+      expect(review).to_not be_valid
+      expect(review.errors[:rating]).to include("can't be blank")
     end
 
     it "should not persist Review with invalid rating" do
       review = FactoryBot.build(:review, rating: -1)
-      review.validate
-      expect(review.errors.full_messages).to include("Rating must be greater than 0")
+      expect(review).to_not be_valid
+      expect(review.errors[:rating]).to include("must be in 0..5")
     end
 
     it "should not persist Review with invalid content" do
       review = FactoryBot.build(:review, content: "a" * 281)
-      review.validate
-      expect(review.errors.full_messages).to include("Content is too long (maximum is 280 characters)")
+      expect(review).to_not be_valid
+      expect(review.errors[:content]).to include("is too long (maximum is 280 characters)")
     end
   end
 end
