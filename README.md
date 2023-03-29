@@ -2,8 +2,6 @@
 
 ### Import repository
 
-[this link](https://github.com/new/import){:target="\_blank"}
-
 Follow [this link](https://github.com/new/import) to create a new repository from an existing one \
 Fill the old repository with this url https://github.com/BetterCallBen/training-exercise.git \
 Chose your repository name and begin import
