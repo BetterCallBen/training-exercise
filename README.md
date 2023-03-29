@@ -2,7 +2,7 @@
 
 ### Import repository
 
-Follow [this link](https://github.com/new/import) to create a new repository from an existing one \
+Follow [this link](https://github.com/new/import){:target="\_blank"} to create a new repository from an existing one \
 Fill the old repository with this url https://github.com/BetterCallBen/training-exercise.git \
 Chose your repository name and begin import
 
@@ -28,7 +28,7 @@ bundle && yarn
 rails db:create db:migrate
 ```
 
-### Start coding 
+### Start coding
 
 ```sh
 code . && dev
@@ -47,16 +47,16 @@ bundle exec rspec
 #### Specific specs (tree model exemple)
 
 ```sh
-bundle exec rspec spec/models/tree_spec.rb 
+bundle exec rspec spec/models/tree_spec.rb
 ```
 
-## Config 
+## Config
 
 ### Ruby
 
 This app is using ruby 3.1.2
 
-#### To install it 
+#### To install it
 
 ```sh
 rbenv install 3.1.2
@@ -67,6 +67,7 @@ rbenv install 3.1.2
 ```sh
 rbenv shell 3.1.2
 ```
+
 ### Rails
 
 This app is using rails 7.0.4
@@ -82,4 +83,3 @@ gem install rails -v 7.0.4
 ```sh
 rbenv rehash
 ```
-
