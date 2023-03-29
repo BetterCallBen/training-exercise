@@ -3,7 +3,7 @@
 ### Import repository
 
 Follow [this link](https://github.com/new/import){:target="toto"} to create a new repository from an existing one \
-<a href="https://github.com/new/import" target="_blank">this link</a>
+<a href="https://github.com/new/import" target="_blank">this link in html</a>
 Fill the old repository with this url https://github.com/BetterCallBen/training-exercise.git \
 Chose your repository name and begin import
 
